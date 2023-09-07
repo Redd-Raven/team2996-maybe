@@ -57,18 +57,22 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white z-50">
+    <header className="bg-neutral-800 z-50">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="mx-auto flex max-w-7xl items-center justify-between p-3 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a href="/" className="max-w-auto p-1.5">
+            <span className="sr-only">Cougars Gone Wired</span>
+            <p className="float-right px-5 mt-4 text-xl font-semibold color-teamred">
+              Cougars Gone Wired
+            </p>
             <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              className="mx-4"
+              src="/favicon-small-2996.png"
               alt=""
+              width="60px"
             />
           </a>
         </div>
@@ -84,14 +88,6 @@ export default function Header() {
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
-              Product
-              <ChevronDownIcon
-                className="h-5 w-5 flex-none text-gray-400"
-                aria-hidden="true"
-              />
-            </Popover.Button>
-
             <Transition
               as={Fragment}
               enter="transition ease-out duration-200"
@@ -148,37 +144,29 @@ export default function Header() {
 
           <a
             href="/#newsletter"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-lg font-semibold leading-6 color-teamred"
           >
-            Newsletter
+            About Us
           </a>
           <a
             href="/price"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-lg font-semibold leading-6 color-teamred"
           >
-            Price
+            Resources
           </a>
           <a
             href="/contact"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-lg font-semibold leading-6 color-teamred"
           >
-            Contact
+            Contact Us
           </a>
           <a
             href="/blog"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-lg font-semibold leading-6 color-teamred"
           >
-            Blog
+            Calendar
           </a>
         </Popover.Group>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="/signin"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
-        </div>
       </nav>
       <Dialog
         as="div"
@@ -192,9 +180,10 @@ export default function Header() {
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                className=""
+                src="/full-red-cgw-logosvg.png"
                 alt=""
+                width="100px"
               />
             </a>
             <button
@@ -207,21 +196,11 @@ export default function Header() {
             </button>
           </div>
           <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
+            <div className="-my-6">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
-                        Product
-                        <ChevronDownIcon
-                          className={classNames(
-                            open ? 'rotate-180' : '',
-                            'h-5 w-5 flex-none',
-                          )}
-                          aria-hidden="true"
-                        />
-                      </Disclosure.Button>
                       <Disclosure.Panel className="mt-2 space-y-2">
                         {[...products, ...callsToAction].map((item) => (
                           <Disclosure.Button
@@ -260,14 +239,6 @@ export default function Header() {
                   className="-mx-3 block rounded-lg py-2 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Blog
-                </a>
-              </div>
-              <div className="py-6">
-                <a
-                  href="/signin"
-                  className="-mx-3 block rounded-lg py-2.5 px-3 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
                 </a>
               </div>
             </div>

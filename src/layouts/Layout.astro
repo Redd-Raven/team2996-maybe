@@ -1,5 +1,5 @@
 ---
-import Footer from './Footer';
+import Footer from 'src/layouts/footer.astro';
 import Header from './Header';
 
 export interface Props {
@@ -33,6 +33,12 @@ const { title } = Astro.props;
       #da62c4 30%,
       white 60%
     );
+  }
+  .color-teamred {
+    color: #cc0000;
+  }
+  .name-header {
+    margin-top: 7%;
   }
   html {
     font-family: system-ui, sans-serif;
